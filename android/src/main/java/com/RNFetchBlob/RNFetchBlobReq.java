@@ -188,9 +188,6 @@ public class RNFetchBlobReq extends BroadcastReceiver implements Runnable {
                     String key = it.nextKey();
                     req.addRequestHeader(key, headers.getString(key));
                 }
-
-                req.setAllowedNetworkTypes(DownloadManager.Request.NETWORK_WIFI);
-
                 Context appCtx = RNFetchBlob.RCTContext.getApplicationContext();
                 DownloadManager dm = (DownloadManager) appCtx.getSystemService(Context.DOWNLOAD_SERVICE);
                 downloadManagerId = dm.enqueue(req);
